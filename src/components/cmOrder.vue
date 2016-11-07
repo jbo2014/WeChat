@@ -5,12 +5,14 @@
 	        <p class="page__desc">请按要求输入信息</p>
 	    </div>
 	    <div class="page__bd">
+			<validator name="validation1">
+
 	        <div class="weui-cells__title">个人信息</div>
 	        <div class="weui-cells weui-cells_form">
 	            <div class="weui-cell">
 	                <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
 	                <div class="weui-cell__bd">
-	                    <input class="weui-input" type="name" placeholder="请输入姓名"/>
+	                    <input id="username" class="weui-input" type="text" v-model="username" placeholder="请输入姓名" v-validate:username="{required:true}"/>
 	                </div>
 	            </div>
 	            <div class="weui-cell">
@@ -23,8 +25,38 @@
 	            </div>
 	        </div>
 	        <!-- <div class="weui-cells__tips">必填信息，请如实填写</div> -->
+	        <div class="errors">
+		        <p v-if="$validation1.username.required">Required your name.</p>
+		        <!-- <p v-if="$validation1.comment.maxlength">Your comment is too long.</p> -->
+	      	</div>
+        	
+	        <div class="weui-cells__title">服务信息</div>
+	        <div class="weui-form-preview">
+	            <div class="weui-form-preview__hd">
+	                <label class="weui-form-preview__label">付款金额</label>
+	                <em class="weui-form-preview__value">¥2400.00</em>
+	            </div>
+	            <div class="weui-form-preview__bd">
+	                <div class="weui-form-preview__item">
+	                    <label class="weui-form-preview__label">商品</label>
+	                    <span class="weui-form-preview__value">电动打蛋机</span>
+	                </div>
+	                <div class="weui-form-preview__item">
+	                    <label class="weui-form-preview__label">标题标题</label>
+	                    <span class="weui-form-preview__value">名字名字名字</span>
+	                </div>
+	                <div class="weui-form-preview__item">
+	                    <label class="weui-form-preview__label">标题标题</label>
+	                    <span class="weui-form-preview__value">很长很长的名字很长很长的名字很长很长的名字很长很长的名字很长很长的名字</span>
+	                </div>
+	            </div>
+	            <div class="weui-form-preview__ft">
+	                <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">添加</button>
+	                <a class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">清空</a>
+	            </div>
+	        </div>
 
-	        <div class="weui-cells__title">装修信息</div>	        
+	        <div class="weui-cells__title">预约信息</div>	        
 	        <div class="weui-cells weui-cells_form">
 	            <div class="weui-cell">
 	                <div class="weui-cell__hd"><label for="" class="weui-label">装修时间</label></div>
@@ -82,8 +114,10 @@
 	        </label>
 
 	        <div class="weui-btn-area">
-	            <a class="weui-btn weui-btn_primary" href="javascript:" id="showTooltips">确定</a>
+	            <input type="submit" class="weui-btn weui-btn_primary" title="确定" href="javascript:" id="showTooltips" v-if="$validation1.valid">
 	        </div>
+
+	        </validator>
 	    </div>
 	    <div class="page__ft">
 	        <a href="javascript:home()"><img src="../assets/icon_footer_link.png" /></a>
@@ -92,6 +126,25 @@
 </template>
 
 <script type="text/javascript">
+import VueValidator from 'vue-validator'
+// Vue.use(VueValidator);
+export default{
+    data(){
+        return{
+            username:'',
+            passw:'',
+            passw2:''
+        }
+    },
+    methods:{
+        passwInvalid(){
+            alert('只能输入6-20个字母、数字、下划线');
+        },
+        passwok(){
+            //alert('验证码符合规范')
+        }
+    }
+}
 </script>
 
 <style>
