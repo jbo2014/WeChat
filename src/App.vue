@@ -1,22 +1,10 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png">
-    <h1>{{ author }}</h1>
-
-    <ul>
-      <li>
-        <router-link to='/first'>To first</router-link>
-      </li>
-      <li>
-        <router-link to='/second'>To second</router-link>
-      </li>
-      <router-view></router-view>
-    </ul> -->
-
-    <router-view></router-view>
-
-    <!-- <first></first>
-    <second></second> -->
+    <div class="container" id="container">
+      <transition name="slide">
+        <router-view></router-view>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -33,6 +21,9 @@ export default {
 </script>
 
 <style>
+body{
+  background-color: #f7f7f7;
+}
 /*#app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
