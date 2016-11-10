@@ -12,6 +12,8 @@ Vue.config.debug = true;
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
+import VueValidator from 'vue-validator'
+Vue.use(VueValidator);
 
 // 定义组件
 //const first = { template: '<div><h2>我是第1个页面</h2></div>'}
@@ -40,6 +42,8 @@ import cmOrder from './components/cmOrder.vue'
 // // 业主-历史记录详页
 // import cmHistoryView from './components/cmHistoryView.vue'
 
+import test from './components/test.vue'
+
 
 // 创建一个路由器实例，并配置路由规则
 const router = new VueRouter({
@@ -57,6 +61,10 @@ const router = new VueRouter({
 		{
 			path: '/cmOrder',
 			component: cmOrder
+		},
+		{
+			path: '/test',
+			component: test
 		}
 	]
 })
@@ -66,7 +74,8 @@ const app = new Vue({
 	render: h => h(App),
   	components: { 
   		wkOrderList,
-  		cmOrder 
+  		cmOrder,
+  		test 
   	}
 }).$mount('#app')
 

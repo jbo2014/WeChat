@@ -2,7 +2,7 @@
     <div class="page js_show">
         <div class="page__hd">
             <h1 class="page__title">TG</h1>
-            <p class="page__desc">天工工作室</p>
+            <!-- <p class="page__desc">天工工作室</p> -->
         </div>
         <div class="page__bd">
             <div class="weui-panel">
