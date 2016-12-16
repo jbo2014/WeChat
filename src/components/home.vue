@@ -35,7 +35,7 @@
                             <a class="weui-cell weui-cell_access" href="javascript:;">
                                 <div class="weui-cell__hd"></div>
                                 <div class="weui-cell__bd weui-cell_primary">
-                                    <p>处理中</p>
+                                    <p><icon name="wrench" scale="1.2"></icon>&nbsp;&nbsp;处理中</p>
                                 </div>
                                 <span class="weui-cell__ft"></span>
                             </a>
@@ -49,7 +49,7 @@
                             <a class="weui-cell weui-cell_access" href="javascript:;">
                                 <div class="weui-cell__hd"></div>
                                 <div class="weui-cell__bd weui-cell_primary">
-                                    <p>历史信息</p>
+                                    <p><icon name="history" scale="1.2"></icon>&nbsp;&nbsp;历史信息</p>
                                 </div>
                                 <span class="weui-cell__ft"></span>
                             </a>

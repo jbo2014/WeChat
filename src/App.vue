@@ -1,23 +1,21 @@
 <template>
-  <div id="app">
-    <div class="container" id="container">
-      <transition name="slide">
-        <router-view></router-view>
-      </transition>
-    </div>
+  <div class="container" id="app">
+    <transition name="slide">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
 // import first from './components/first.vue'
-export default {
-  name: 'app',
-  data () {
-    return {
-      author: 'I\'m polya'
-    }
-  }
-}
+// export default {
+//   name: 'container',
+//   data () {
+//     return {
+//       author: 'I\'m polya'
+//     }
+//   }
+// }
 </script>
 
 <style>

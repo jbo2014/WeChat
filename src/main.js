@@ -3,22 +3,33 @@ import App from './App.vue'
 import VueRouter from "vue-router"
 import VueResource from 'vue-resource'
 
+import VueValidator from 'vue-validator'
+// 图标
+import Icon from 'vue-awesome/components/Icon.vue'
+// import 'vue-awesome/icons/flag'
+
 import './style/weui.css'
 import './style/example.css'
 import './style/style.css'
 
+
 // 开启debug模式
 Vue.config.debug = true;
 
-Vue.use(VueRouter);
-Vue.use(VueResource);
-import VueValidator from 'vue-validator'
-Vue.use(VueValidator);
+Vue.use(VueRouter)
+Vue.use(VueResource)
+Vue.use(VueValidator)
+Vue.component('icon',Icon)
 
 // 定义组件
 //const first = { template: '<div><h2>我是第1个页面</h2></div>'}
+// 共通页面
 // 首页
 import home from './components/home.vue'
+// 服务选择列表
+import srvList from './components/srvList.vue'
+
+
 // 工人-抢单列表
 import wkOrderList from './components/wkOrderList.vue'
 // 工人-订单详页
@@ -31,6 +42,7 @@ import wkOrderList from './components/wkOrderList.vue'
 // import wkHistoryList from './components/wkHistoryList.vue'
 // // 工人-历史记录详页
 // import wkHistoryView from './components/wkHistoryView.vue'
+
 // 业主-下单页面
 import cmOrder from './components/cmOrder.vue'
 // // 业主-处理中列表
@@ -55,6 +67,10 @@ const router = new VueRouter({
 			component: home
 		},
 		{
+			path: '/srvList',
+			component: srvList
+		},
+		{
 			path: '/wkOrderList',
 			component: wkOrderList
 		},
@@ -73,9 +89,11 @@ const app = new Vue({
 	router: router,
 	render: h => h(App),
   	components: { 
+  		'icon': Icon, 
   		wkOrderList,
   		cmOrder,
-  		test 
+  		test,
+  		srvList
   	}
 }).$mount('#app')
 
